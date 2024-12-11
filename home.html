@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romantic Rain</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('img/gesta.jpg');
+      background-size: cover;
+      overflow: hidden;
+      font-family: 'Dancing Script', cursive;
+    }
+    .rain-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+    .word {
+      position: absolute;
+      font-size: 24px;
+      animation: rain 5s linear infinite;
+      opacity: 0;
+      color: #fff;
+    }
+    @keyframes rain {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+    .word:nth-child(1) { left: 5%; animation-duration: 4s; }
+    .word:nth-child(2) { left: 30%; animation-duration: 5s; }
+    .word:nth-child(3) { left: 50%; animation-duration: 6s; }
+    .word:nth-child(4) { left: 70%; animation-duration: 3.5s; }
+    .word:nth-child(5) { left: 90%; animation-duration: 4.5s; }
+  </style>
+</head>
+<body>
+  <div class="rain-container">
+    <span class="word">gesta🌹</span>
+    <span class="word">jir ieu mah lebay t sih</span>
+    <span class="word">gesta cantik✨</span>
+    <span class="word">gesta cantik❤️</span>
+    <span class="word">moga terhibur</span>
+  </div>
+
+  <!-- Audio -->
+<audio src="img/Dido - Thank You (Lofi Cover) [gJmuoOiZuNY].mp3" autoplay></audio>
+  
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const words = document.querySelectorAll(".word");
+      words.forEach(word => {
+        word.style.left = `${Math.random() * 100}vw`; // Random posisi horizontal
+        word.style.animationDelay = `${Math.random() * 5}s`; // Delay acak
+        word.style.animationDuration = `${6 + Math.random() * 4}s`; // Durasi animasi
+      });
+    });
+  </script>
+</body>
+</html>
